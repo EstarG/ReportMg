@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+	>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<bean id = "LogRecord" class = "com.common.LogRecord">
+		<property name="logService" ref="logService"></property>
+	</bean>
+<!--	<aop:config>-->
+<!--		<aop:aspect id = "log" ref="LogRecord">-->
+<!--			<aop:pointcut expression="execution(* com.service.IEmpService.login(..))" id="login1"/>-->
+<!--			<aop:after method="loginLog" pointcut-ref="login1"/>-->
+<!--		</aop:aspect>	-->
+<!--		<aop:aspect id = "log2" ref="LogRecord">-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.EmpDaoImpl.save(..))" id="loginsert"/>-->
+<!--			<aop:after method="insertEmpLog" pointcut-ref="loginsert"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ReportDaoImpl.save(..))" id="loginsert1"/>-->
+<!--			<aop:after method="insertReportLog" pointcut-ref="loginsert1"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ProjectDaoImpl.save(..))" id="loginsert2"/>-->
+<!--			<aop:after method="insertProjectLog" pointcut-ref="loginsert2"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.PrpDaoImpl.save(..))" id="loginsert3"/>-->
+<!--			<aop:after method="insertPrpLog" pointcut-ref="loginsert3"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.DeptDaoImpl.save(..))" id="loginsert4"/>-->
+<!--			<aop:after method="insertDeptLog" pointcut-ref="loginsert4"/>-->
+<!--			-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.EmpDaoImpl.delete(..))" id="logdelete"/>-->
+<!--			<aop:after method="deleteEmpLog" pointcut-ref="logdelete"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ReportDaoImpl.delete(..))" id="logdelete1"/>-->
+<!--			<aop:after method="deleteReportLog" pointcut-ref="logdelete1"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ProjectDaoImpl.delete(..))" id="logdelete2"/>-->
+<!--			<aop:after method="deleteProjectLog" pointcut-ref="logdelete2"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.PrpDaoImpl.delete(..))" id="logdelete3"/>-->
+<!--			<aop:after method="deletePrpLog" pointcut-ref="logdelete3"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.DeptDaoImpl.delete(..))" id="logdelete4"/>-->
+<!--			<aop:after method="deleteDeptLog" pointcut-ref="logdelete4"/>-->
+<!--			-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.EmpDaoImpl.update(..))" id="logupdate"/>-->
+<!--			<aop:after method="updatetEmpLog" pointcut-ref="logupdate"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ReportDaoImpl.update(..))" id="logupdate1"/>-->
+<!--			<aop:after method="updatetReportLog" pointcut-ref="logupdate1"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ProjectDaoImpl.update(..))" id="logupdate2"/>-->
+<!--			<aop:after method="updatetProjectLog" pointcut-ref="logupdate2"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.PrpDaoImpl.update(..))" id="logupdate3"/>-->
+<!--			<aop:after method="updatetPrpLog" pointcut-ref="logupdate3"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.DeptDaoImpl.update(..))" id="logupdate4"/>-->
+<!--			<aop:after method="updatetDeptLog" pointcut-ref="logupdate4"/>-->
+<!--			-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.EmpDaoImpl.find(..))" id="logfind"/>-->
+<!--			<aop:after method="queryEmpLog" pointcut-ref="logfind"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ReportDaoImpl.query(..))" id="logfind1"/>-->
+<!--			<aop:after method="queryReportLog" pointcut-ref="logfind1"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.ProjectDaoImpl.query(..))" id="logfind2"/>-->
+<!--			<aop:after method="queryProjectLog" pointcut-ref="logfind2"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.PrpDaoImpl.query(..))" id="logfind3"/>-->
+<!--			<aop:after method="queryPrpsLog" pointcut-ref="logfind3"/>-->
+<!--			<aop:pointcut expression="execution(* com.persistence.impl.DeptDaoImpl.query(..))" id="logfind4"/>-->
+<!--			<aop:after method="queryDeptLog" pointcut-ref="logfind4"/>-->
+<!--			-->
+<!--		</aop:aspect>-->
+<!--	</aop:config>-->
+	
+	<!--  Dao层配置	-->
+	<bean id="sysdao" class="com.common.SyscodeUtils">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id = "empDao" class = "com.persistence.impl.EmpDaoImpl">
+		<property name="sessionFactory" ref = "sessionFactory"></property>
+	</bean>	
+	<bean id = "logDao" class = "com.persistence.impl.LogDaoImpl">
+		<property name="sessionFactory" ref = "sessionFactory"></property>
+    </bean>
+	
+	
+	<!--  Service层配置 	-->
+	<bean id = "empService" class = "com.service.impl.EmpServiceImpl">
+		<property name="empDao" ref = "empDao"></property>
+	</bean>
+	<bean id = "logService" class = "com.service.impl.LogServiceImpl">
+		<property name="logDao" ref = "logDao"></property>
+	</bean>
+	
+	<!--  Action层配置	-->
+	<bean id = "empAction" class = "com.web.EmpAction" scope="prototype">
+		<property name="empService" ref = "empService"></property>
+		<property name="sysdao" ref = "sysdao"></property>
+		<property name="deptService" ref = "deptService"></property>
+	</bean>
+	<bean id = "logAction" class = "com.web.LogAction" scope = "prototype">
+		<property name="logService" ref = "logService"></property>	
+	</bean>
+</beans>

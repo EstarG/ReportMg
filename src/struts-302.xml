@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="" extends="json-default">
+		<action name="*_PrpAction" class="prpAction" method="{1}">
+			<result name="queryPrp" type="chain">queryPrp_PrpAction</result>
+			<result name="PrpQuery">/PRP/PRPQuery.jsp</result>
+			<result name="PrpUpdate">/PRP/updatePRP.jsp</result>
+			<result name="PRPAdd">/PRP/addPRP.jsp</result>
+			
+			<!--	gbx		-->
+			<result name = "cfPrpProject">/project/cfPrpProject.jsp</result>
+		</action>
+		<action name="*_ReportAuditAction" class="auditingAction" method="{1}">
+			<result name="auditQuery">/report/reportAuditing/auditingQuery.jsp</result>
+			<result name="QueryAudit" type="chain">queryReportAuditing_ReportAuditAction</result>
+			<result name="auditUpdate">/report/reportAuditing/auditingUpdate.jsp</result>
+		</action>
+		<!-- 304Struts -->
+		<action name="*_EmpAction" class="empAction" method = "{1}">
+			<result name = "Admin">/index.jsp</result>
+			<result name = "Common">/index.jsp</result>
+			<result name = "Error">/EnterPage.jsp</result>
+			<result name = "queryEmp" type="redirectAction">query_EmpAction</result>
+			<result name = "showResult">/emp/EmpManagement.jsp</result>
+			<result name = "addEmp">/emp/AddEmp.jsp</result>
+			<result name = "updateEmp">/emp/UpdateEmp.jsp</result>
+			<result name = "showDetails">/emp/empDetails.jsp</result>
+			<result name = "old">/emp/updatePassword.jsp</result>
+			<result type="json" name="success">
+				<param name="root">cityOptions</param>
+			</result>
+			
+		</action>
+		<!--  -->
+	</package>
+</struts>    

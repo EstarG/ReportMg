@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<package name="" extends="json-default">
+	
+		<action name="*_ReportAction" class="reportAction" method="{1}">
+			<result name="showPerson">/report/showPerson.jsp</result>
+			<result name="queryReport" type="chain">query_ReportAction</result>
+			<result name="update" >/report/updateReport.jsp</result>
+			<result name="addReport">/report/addReport.jsp</result>
+			<result name="queryBy" type="chain">queryBy_ReportAction</result>
+			<result name="showDate">/report/showDate.jsp</result>
+			<result name="showProject">/report/showProject.jsp</result>
+			<result name="showOne">/report/showOne.jsp</result>
+			<result name="showByDate">/report/showByDate.jsp</result>
+			<result name="initAdd" type="redirectAction">initAdd_ReportAction</result>
+			<result name="input">/error.jsp</result>
+			<result type="json" name="success">
+				<param name="root">prpOptions</param>
+			</result>
+		</action>
+	
+	
+		<action name="*_EmpAction" class="empAction" method = "{1}">
+			<result name = "Admin">/index.jsp</result>
+			<result name = "queryEmp" type="redirectAction">query_EmpAction</result>
+			<result name = "showResult">/emp/EmpManagement.jsp</result>
+			<result name = "addEmp">/emp/AddEmp.jsp</result>
+			<result name = "updateEmp">/emp/UpdateEmp.jsp</result>
+			<result name = "showDetails">/emp/empDetails.jsp</result>
+			<result type="json" name="success">
+				<param name="root">cityOptions</param>
+			</result>
+		</action>
+		<action name = "*_LogAction" class = "logAction" method = "{1}">
+			<result name = "qyeryLog">/log/log.jsp</result>
+		</action>
+	</package>
+	
+</struts>    

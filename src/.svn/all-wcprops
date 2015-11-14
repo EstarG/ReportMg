@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/slg_project/!svn/ver/4141/ReportMg3/src
+END
+hibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/slg_project/!svn/ver/1377/ReportMg3/src/hibernate.cfg.xml
+END
+struts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/slg_project/!svn/ver/4053/ReportMg3/src/struts.xml
+END
+struts-301.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/slg_project/!svn/ver/3121/ReportMg3/src/struts-301.xml
+END
+struts-302.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/slg_project/!svn/ver/3109/ReportMg3/src/struts-302.xml
+END
+struts-303.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/slg_project/!svn/ver/3952/ReportMg3/src/struts-303.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/slg_project/!svn/ver/3179/ReportMg3/src/applicationContext.xml
+END
+struts-304.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/slg_project/!svn/ver/3255/ReportMg3/src/struts-304.xml
+END
+applicationContext-301.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/slg_project/!svn/ver/3416/ReportMg3/src/applicationContext-301.xml
+END
+struts-305.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/slg_project/!svn/ver/598/ReportMg3/src/struts-305.xml
+END
+applicationContext-302.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/slg_project/!svn/ver/2560/ReportMg3/src/applicationContext-302.xml
+END
+struts-306.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/slg_project/!svn/ver/1447/ReportMg3/src/struts-306.xml
+END
+applicationContext-303.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/slg_project/!svn/ver/3804/ReportMg3/src/applicationContext-303.xml
+END
+applicationContext-304.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/slg_project/!svn/ver/3988/ReportMg3/src/applicationContext-304.xml
+END
+applicationContext-305.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/slg_project/!svn/ver/598/ReportMg3/src/applicationContext-305.xml
+END
+applicationContext-306.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/slg_project/!svn/ver/598/ReportMg3/src/applicationContext-306.xml
+END

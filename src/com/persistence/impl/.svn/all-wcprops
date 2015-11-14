@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/slg_project/!svn/ver/4091/ReportMg3/src/com/persistence/impl
+END
+ReportDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/slg_project/!svn/ver/4091/ReportMg3/src/com/persistence/impl/ReportDaoImpl.java
+END
+DeptDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/slg_project/!svn/ver/4055/ReportMg3/src/com/persistence/impl/DeptDaoImpl.java
+END
+EmpDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/slg_project/!svn/ver/4046/ReportMg3/src/com/persistence/impl/EmpDaoImpl.java
+END
+LogDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/slg_project/!svn/ver/3988/ReportMg3/src/com/persistence/impl/LogDaoImpl.java
+END
+PrpDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/slg_project/!svn/ver/3765/ReportMg3/src/com/persistence/impl/PrpDaoImpl.java
+END
+AuditingDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/slg_project/!svn/ver/3923/ReportMg3/src/com/persistence/impl/AuditingDaoImpl.java
+END
+ProjectDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/slg_project/!svn/ver/4055/ReportMg3/src/com/persistence/impl/ProjectDaoImpl.java
+END

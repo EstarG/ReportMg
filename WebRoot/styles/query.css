@@ -1,0 +1,21 @@
+/* CSS Document */
+
+th{
+
+margin:0px;
+padding:1px;
+width:350px;
+height:25px;
+border:#FFFFFF solid 1px;
+}
+td{
+background:#fffff;
+border:#FFFFFF solid 1px;
+margin:0px;
+padding:1px;
+width:350px;
+height:35px;
+}
+#button{
+margin:1px 1px 1px 600px;
+}

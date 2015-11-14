@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<package name="" extends="json-default">
+		<action name="*_EmpAction" class="empAction" method = "{1}">
+			<result name = "Admin">/index.jsp</result>
+			<result name = "Common">/index.jsp</result>
+			<result name = "Error">/EnterPage.jsp</result>
+			<result name = "queryEmp" type="redirectAction">query_EmpAction</result>
+			<result name = "showResult">/emp/EmpManagement.jsp</result>
+			<result name = "addEmp">/emp/AddEmp.jsp</result>
+			<result name = "updateEmp">/emp/UpdateEmp.jsp</result>
+			<result name = "showDetails">/emp/empDetails.jsp</result>
+			<result name = "old">/emp/updatePassword.jsp</result>
+			<result type="json" name="success">
+				<param name="root">cityOptions</param>
+			</result>
+			
+		</action>
+		<action name = "*_LogAction" class = "logAction" method = "{1}">
+			<result name = "qyeryLog">/log/log.jsp</result>
+		</action>
+	</package>
+</struts>    

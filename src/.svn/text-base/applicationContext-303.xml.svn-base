@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="syscodeUtils" class="com.common.SyscodeUtils">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="reportDao" class="com.persistence.impl.ReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		
+	</bean>
+	<bean id="prpDao" class="com.persistence.impl.PrpDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="empDao" class="com.persistence.impl.EmpDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="projectDao" class="com.persistence.impl.ProjectDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="prpService" class="com.service.impl.PrpServiceImpl">
+		<property name="prpDao" ref="prpDao"></property>
+	
+	</bean>
+	<bean id="projectService" class="com.service.impl.ProjectServiceImpl">
+	
+		<property name="projectDao" ref="projectDao"></property>
+	
+	</bean>
+	<bean id="reportService" class="com.service.impl.ReportServiceImpl">
+		<property name="reportDao" ref="reportDao"></property>
+	</bean>
+	<bean id="reportAction" class="com.web.ReportAction" scope="prototype">
+		<property name="reportService" ref="reportService"></property>
+		<property name="syscode" ref="syscodeUtils"></property>
+		<property name="emp" ref="empDao"></property>
+		<property name="project" ref="projectService"></property>
+		<property name="prp" ref="prpService"></property>
+	</bean>
+
+</beans>

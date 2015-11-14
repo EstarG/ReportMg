@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/slg_project/!svn/ver/4091/ReportMg3/src/com/persistence
+END
+IAuditingDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/slg_project/!svn/ver/2741/ReportMg3/src/com/persistence/IAuditingDao.java
+END
+IProjectDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/slg_project/!svn/ver/2992/ReportMg3/src/com/persistence/IProjectDao.java
+END
+IReportDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/slg_project/!svn/ver/3908/ReportMg3/src/com/persistence/IReportDao.java
+END
+IDeptDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/slg_project/!svn/ver/2562/ReportMg3/src/com/persistence/IDeptDao.java
+END
+IEmpDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/slg_project/!svn/ver/4045/ReportMg3/src/com/persistence/IEmpDao.java
+END
+ILogDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/slg_project/!svn/ver/1806/ReportMg3/src/com/persistence/ILogDao.java
+END
+IPrpDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/slg_project/!svn/ver/3723/ReportMg3/src/com/persistence/IPrpDao.java
+END

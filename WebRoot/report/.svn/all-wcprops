@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/slg_project/!svn/ver/4120/ReportMg3/WebRoot/report
+END
+addReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/slg_project/!svn/ver/4120/ReportMg3/WebRoot/report/addReport.jsp
+END
+queryReportDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/slg_project/!svn/ver/3834/ReportMg3/WebRoot/report/queryReportDetail.jsp
+END
+showPerson.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/slg_project/!svn/ver/4067/ReportMg3/WebRoot/report/showPerson.jsp
+END
+showProject.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/slg_project/!svn/ver/4067/ReportMg3/WebRoot/report/showProject.jsp
+END
+showByDate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/slg_project/!svn/ver/4091/ReportMg3/WebRoot/report/showByDate.jsp
+END
+queryAllReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/slg_project/!svn/ver/4068/ReportMg3/WebRoot/report/queryAllReport.jsp
+END
+showDate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/slg_project/!svn/ver/4076/ReportMg3/WebRoot/report/showDate.jsp
+END
+updateReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/slg_project/!svn/ver/3952/ReportMg3/WebRoot/report/updateReport.jsp
+END
+exportDate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/slg_project/!svn/ver/3703/ReportMg3/WebRoot/report/exportDate.jsp
+END
+exportPro.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/slg_project/!svn/ver/3703/ReportMg3/WebRoot/report/exportPro.jsp
+END
+showOne.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/slg_project/!svn/ver/3554/ReportMg3/WebRoot/report/showOne.jsp
+END

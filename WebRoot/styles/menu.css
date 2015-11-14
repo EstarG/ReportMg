@@ -1,0 +1,34 @@
+/* CSS Document */
+body{
+margin:0px;
+padding:0px;
+}
+#content{
+margin:0px;
+padding:0px;
+width:180px;
+height:492px;
+background:#e8f0ff;
+}
+.query{
+width:180px;
+height:30px;
+
+background:#f4f9ff;
+}
+.queryDetails{
+width:180px;
+margin:auto;
+display:none;
+}
+.dept,.emp{
+width:180px;
+height:30px;
+margin:0px auto;
+background:#FFCCCC;
+}
+.deptDetails{
+width:180px;
+margin:auto;
+display:none;
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+
+
+<!-- 映入自己的-->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+	<!--  拦截器设置	-->
+	
+	<package name="base" extends="json-default">
+	    
+	    <interceptors>
+	    	<interceptor name="loginInterceptor" class="loginInterceptor"></interceptor>
+	    	
+	    	<interceptor-stack name="loginStack">
+			<!--	    	       必须受到继承默认的拦截器站-->
+	    	    <interceptor-ref name="defaultStack"></interceptor-ref>
+	    		<interceptor-ref name="loginInterceptor"></interceptor-ref>
+	    		
+	    	</interceptor-stack>
+	    </interceptors>
+	    
+	    <default-interceptor-ref name="loginStack"></default-interceptor-ref>
+	   
+	    <global-results>
+			<result name="login">/peaseLogin.jsp</result>
+		</global-results>
+		
+	</package>
+	
+	
+	
+	
+	
+	
+	<package name="" extends="base">
+<!--		301-->
+		<action name="*_DeptAction" class="deptAction" method="{1}">
+		    <result type="json" name="queryDeptEmps">
+				<param name="root">
+					deptEmps
+				</param>
+			 </result>
+			<result name = "addDept">/dept/addDept.jsp</result>	
+			<result name = "updateDept">/dept/updateDept.jsp</result>
+			<result name = "configDept">/dept/configDept.jsp</result>
+			<result name = "showDept">/dept/deptDetail.jsp</result>
+			
+		</action>
+		
+		<action name="*_ProjectAction" class="projectAction" method="{1}">
+             
+			<result type="json" name="success">
+				<param name="root">
+					proDepts
+				</param>
+			 </result>
+			 
+			 <result type="json" name="isExist">
+				<param name="root">
+					isE
+				</param>
+			 </result>
+			 <result name = "showPro">/project/showProject.jsp</result>
+			 <result name = "queryPro" type="chain">query_ProjectAction</result>
+			 <result name = "updatePro">/project/updateProject.jsp</result>
+			 <result name = "cfDeptProject">/project/cfDeptProject.jsp</result>
+			 
+			  <result name = "cfEmpProject">/project/cfEmpProject.jsp</result>
+			  <result name = "slEmp">/project/selEmp.jsp</result>
+			  <result name = "slOtherEmp">/project/selOtherEmp.jsp</result>
+			 <result name="input">/project/error.jsp</result>
+		</action>	
+		
+<!--		302-->
+		<action name="*_PrpAction" class="prpAction" method="{1}">
+			<result name="queryPrp" type="chain">queryPrp_PrpAction</result>
+			<result name="PrpQuery">/PRP/PRPQuery.jsp</result>
+			<result name="PrpUpdate">/PRP/updatePRP.jsp</result>
+			<result name="PRPAdd">/PRP/addPRP.jsp</result>
+			<!--	gbx		-->
+			<result name = "cfPrpProject">/project/cfPrpProject.jsp</result>
+			<!-- prp判重复 -->
+			<result type="json" name="existPrp">
+				<param name="root">
+					isEx
+				</param>
+			 </result>
+		</action>
+		
+		<action name="*_ReportAuditAction" class="auditingAction" method="{1}">
+			<result name="auditQuery">/report/reportAuditing/auditingQuery.jsp</result>
+			<result name="auditQueryAdmin">/report/reportAuditing/auditingQueryAdmin.jsp</result>
+			<result name="QueryAudit" type="chain">queryReportAuditing_ReportAuditAction</result>
+			<result name="QueryAuditAdmin" type="chain">queryReportAuditAdmin_ReportAuditAction</result>
+			<result name="auditUpdate">/report/reportAuditing/auditingUpdate.jsp</result>
+		</action>
+		
+		
+<!--		303-->
+		<action name="*_ReportAction" class="reportAction" method="{1}">
+			<result name="showPerson">/report/showPerson.jsp</result>
+			<result name="queryReport" type="chain">query_ReportAction</result>
+			<result name="update" >/report/updateReport.jsp</result>
+			<result name="addReport">/report/addReport.jsp</result>
+			<result name="queryBy" type="chain">queryBy_ReportAction</result>
+			<result name="showDate">/report/showDate.jsp</result>
+			<result name="showProject">/report/showProject.jsp</result>
+			<result name="showOne">/report/showOne.jsp</result>
+			<result name="showByDate">/report/showByDate.jsp</result>
+			<result name="initAdd" type="redirectAction">initAdd_ReportAction</result>
+			<result name="input">/error.jsp</result>
+			<!--			日报导出-->
+			
+			<result name = "exportPro">/report/exportPro.jsp</result>
+			<result name = "exportDate">/report/exportDate.jsp</result>
+			<!--	未写日报查询		-->
+			<result name = "queryReportDetail">/report/queryReportDetail.jsp</result>
+			<result name = "queryAllReport">/report/queryAllReport.jsp</result>
+			
+			<result type="json" name="success">
+				<param name="root">prpOptions</param>
+			</result>
+		</action>
+
+<!--		304-->
+		<action name="*_EmpAction" class="empAction" method = "{1}">
+			<result name = "pass">/emp/updatePassword.jsp</result>
+			<result name = "queryEmp" type="redirectAction">query_EmpAction</result>
+			<result name = "showResult">/emp/EmpManagement.jsp</result>
+			<result name = "addEmp">/emp/AddEmp.jsp</result>
+			<result name = "updateEmp">/emp/UpdateEmp.jsp</result>
+			<result name = "showDetails">/emp/empDetails.jsp</result>
+			<result name = "old">/emp/updatePassword.jsp</result>
+			<result type="json" name="success">
+				<param name="root">cityOptions</param>
+			</result>
+			
+		</action>
+		<action name = "*_LogAction" class = "logAction" method = "{1}">
+			<result name = "qyeryLog">/log/log.jsp</result>
+		</action>
+		
+	</package>	
+	
+	
+	<package name="Login" extends="struts-default">
+		<action name="*_LoginAction" class="loginAction" method="{1}">
+		    <result name = "Admin">/adminIndex.jsp</result>
+			<result name = "Leader">/leaderIndex.jsp</result>
+			<result name = "Common">/commonIndex.jsp</result>
+			<result name = "exit">/tlogin.jsp</result>
+			<result name = "Error">/EnterPage.jsp</result>
+			<result name = "back">/getMyPass.jsp</result>
+		</action>
+	</package>
+	
+</struts>    

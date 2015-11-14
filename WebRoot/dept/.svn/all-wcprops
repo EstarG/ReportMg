@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/slg_project/!svn/ver/4074/ReportMg3/WebRoot/dept
+END
+addDept.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/slg_project/!svn/ver/4074/ReportMg3/WebRoot/dept/addDept.jsp
+END
+deptDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/slg_project/!svn/ver/3687/ReportMg3/WebRoot/dept/deptDetail.jsp
+END
+deptTop.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/slg_project/!svn/ver/256/ReportMg3/WebRoot/dept/deptTop.jsp
+END
+updateDept.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/slg_project/!svn/ver/3512/ReportMg3/WebRoot/dept/updateDept.jsp
+END
+deptMenu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/slg_project/!svn/ver/3687/ReportMg3/WebRoot/dept/deptMenu.jsp
+END
+deptMenuTree.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/slg_project/!svn/ver/3687/ReportMg3/WebRoot/dept/deptMenuTree.jsp
+END
+configDept.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/slg_project/!svn/ver/4055/ReportMg3/WebRoot/dept/configDept.jsp
+END

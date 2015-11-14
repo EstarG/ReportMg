@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+
+    <import resource="applicationContext-301.xml"/>
+	<import resource="applicationContext-303.xml"/>
+	<import resource="applicationContext-304.xml"/>
+
+	<import resource="applicationContext-301.xml"/>
+
+	<import resource="applicationContext-302.xml"/>
+  	<import resource="applicationContext-303.xml"/>
+  	<import resource="applicationContext-304.xml"/>
+
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+
+	<!--  Dao层配置	-->
+	<bean id="syscodeUtils" class="com.common.SyscodeUtils">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	<!--  Service层配置 	-->
+	
+	<!--  Action层配置	-->
+	
+	
+	
+</beans>

@@ -1,0 +1,51 @@
+/* CSS Document */
+
+#report{
+width:755px;
+margin:2px auto;
+background:#FFFFCC;
+}
+table{
+margin:1px auto;
+}
+#option th{
+width:300px;
+height:30px;
+background:#CCFFFF;
+}
+#option td{
+width:300px;
+height:35px;
+background:#CCCCCC;
+border:#FFFFFF solid 1px;
+text-align:center;
+font-size:15px;
+font-weight:bold;
+color:#FFFFFF;
+}
+#result th{
+width:100px auto;
+height:30px;
+background:#CCFFFF;
+}
+#result td{
+width:100px;
+height:30px;
+background:#CCCCCC;
+border:#FFFFFF solid 1px;
+text-align:center;
+font-size:16px;
+}
+#update th{
+width:700px;
+height:30px;
+background:#CCFFFF;
+}
+#update td{
+width:700px;
+height:35px;
+background:#CCCCCC;
+border:#FFFFFF solid 1px;
+text-align:center;
+font-size:16px;
+}

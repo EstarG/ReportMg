@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	<bean id="syscodeUtils" class="com.common.SyscodeUtils">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 调用304底层 -->
+	<bean id = "empDao" class = "com.persistence.impl.EmpDaoImpl">
+		<property name="sessionFactory" ref = "sessionFactory"></property>
+	</bean>	
+	<bean id = "empService" class = "com.service.impl.EmpServiceImpl">
+		<property name="empDao" ref = "empDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="prpDao" class="com.persistence.impl.PrpDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="prpService" class="com.service.impl.PrpServiceImpl">
+		<property name="prpDao" ref="prpDao"></property>
+	</bean>
+	<bean id="prpAction" class="com.web.PrpAction" scope="prototype">
+		<property name="prpService" ref="prpService"></property>
+		<property name="projectService" ref="projectService"></property>
+	</bean>
+	<bean id="auditingDao" class="com.persistence.impl.AuditingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="auditingService" class="com.service.impl.AuditingServiceImpl">
+		<property name="auditingDao" ref="auditingDao"></property>
+		<property name="empService" ref="empService"></property>
+	</bean>
+	<bean id="auditingAction" class="com.web.ReportAuditAction" scope="prototype">
+		<property name="auditService" ref="auditingService"></property>
+		<property name="syscode" ref="syscodeUtils"></property>
+	</bean>
+</beans>

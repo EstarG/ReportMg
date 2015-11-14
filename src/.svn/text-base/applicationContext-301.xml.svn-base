@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	
+	<!--	dao-->
+	<bean id="syscodeUtils" class="com.common.SyscodeUtils">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!--   拦截器配置	 -->
+	
+	<bean id="loginInterceptor" class="com.common.LoginInterceptor">
+		
+	</bean>
+	
+	
+	<bean id = "deptDao" class="com.persistence.impl.DeptDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property> 
+	</bean>
+	
+	<bean id = "projectDao" class="com.persistence.impl.ProjectDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	<!--	service-->
+	<bean id = "deptService" class="com.service.impl.DeptServiceImpl">
+		<property name="deptDao" ref="deptDao"></property>
+	</bean>
+	<bean id = "projectService" class="com.service.impl.ProjectServiceImpl">
+		<property name="projectDao" ref="projectDao"></property>
+	</bean>
+	
+	
+	<!--	action -->
+	<bean id = "deptAction" class="com.web.DeptAction" scope="prototype">
+		<property name="deptService" ref="deptService"></property>
+		<property name="projectService" ref="projectService"></property>
+	</bean>
+	<bean id="projectAction" class="com.web.ProjectAction" scope="prototype">
+		<property name="projectService" ref="projectService"></property>
+		<property name="syscodeUtils" ref="syscodeUtils"></property>
+		<property name="empService" ref="empService"></property>
+	</bean>
+	
+	<bean id = "loginAction" class="com.web.LoginAction">
+		<property name="empService" ref="empService"></property>
+	</bean>
+	
+</beans>

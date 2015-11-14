@@ -1,0 +1,55 @@
+/* CSS Document */
+
+#prpQuery{
+width:780px;
+margin:1px auto;
+background:#99CCFF;
+}
+table{
+margin:2px auto;
+}
+#option th{
+width:auto;
+height:30px;
+background:#DCDCDC;
+}
+#option td{
+width:300px;
+height:35px;
+background:#DCDCDC;
+border:#FFFFFF solid 1px;
+text-align:center;
+font-size:15px;
+font-weight:bold;
+color:#000000;
+}
+
+#option2 th{
+background:#DCDCDC;
+}
+#option2 td{
+background:#DCDCDC;
+border:#FFFFFF solid 1px;
+font-size:15px;
+text-align:center;
+font-weight:bold;
+color:#FFFFFF;
+}
+
+#result th{
+width:200px;
+height:70px;
+background:#DCDCDC;
+}
+#result td{
+width:200px;
+height:35px;
+background:#CCCCCC;
+border:#FFFFFF solid 1px;
+text-align:center;
+font-size:16px;
+}
+
+#addPRP{
+background:#ffffff;
+}

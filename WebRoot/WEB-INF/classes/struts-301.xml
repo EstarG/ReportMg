@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+	<package name="" extends="json-default">
+		<action name="*_DeptAction" class="deptAction" method="{1}">
+		    <result type="json" name="queryDeptEmps">
+				<param name="root">
+					deptEmps
+				</param>
+			 </result>
+			<result name = "addDept">/dept/addDept.jsp</result>	
+			<result name = "updateDept">/dept/updateDept.jsp</result>
+			<result name = "configDept">/dept/configDept.jsp</result>
+			<result name = "showDept">/dept/deptDetail.jsp</result>
+			
+		</action>
+		
+		<action name="*_ProjectAction" class="projectAction" method="{1}">
+             
+			<result type="json" name="success">
+				<param name="root">
+					proDepts
+				</param>
+			 </result>
+			 
+			 <result type="json" name="isExist">
+				<param name="root">
+					isE
+				</param>
+			 </result>
+				
+			 <result name = "showPro">/project/showProject.jsp</result>
+			 <result name = "queryPro" type="chain">query_ProjectAction</result>
+			 <result name = "updatePro">/project/updateProject.jsp</result>
+			 <result name = "cfDeptProject">/project/cfDeptProject.jsp</result>
+			 
+			  <result name = "cfEmpProject">/project/cfEmpProject.jsp</result>
+			  <result name = "slEmp">/project/selEmp.jsp</result>
+			  <result name = "slOtherEmp">/project/selOtherEmp.jsp</result>
+			 <result name="input">/project/error.jsp</result>
+		</action>	
+		
+		
+		<action name="*_PrpAction" class="prpAction" method="{1}">
+			<result name="queryPrp" type="chain">queryPrp_PrpAction</result>
+			<result name="PrpQuery">/PRP/PRPQuery.jsp</result>
+			<result name="PrpUpdate">/PRP/updatePRP.jsp</result>
+			<result name="PRPAdd">/PRP/addPRP.jsp</result>
+			
+			<!--	gbx		-->
+			<result name = "cfPrpProject">/project/cfPrpProject.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>    
